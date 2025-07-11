@@ -2,6 +2,7 @@
 
 A secure and feature-rich online consultation platform that connects **Sangomas (traditional healers)** with **Patients**, enabling video, voice, and chat consultations using an in-app coin system. The app ensures privacy, identity verification, and secure payments — all while promoting African spirituality, philosophy, and numerology.
 
+Live Demo(https://vundla.github.io/sangoma-locator-app/)
 ---
 
 ## 🚀 Features
