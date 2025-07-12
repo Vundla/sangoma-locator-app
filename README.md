@@ -6,7 +6,7 @@ Live Demo(https://vundla.github.io/sangoma-locator-app/)
 ---
 
 Ownership Notice
-Azanian AI Agent™ is an original AI chatbot developed by Mandlenkosi Vundla.
+Zitholele-Sangoma_Locator-APP Is developed by Mandlenkosi Vundla.
 Unauthorized use of the name, branding, or content is prohibited.
 All rights reserved © 2025.
 
@@ -118,7 +118,7 @@ Frontend Project Structurefrontend/
 └── README.md
 
 Ownership Notice
-Azanian AI Agent™ is an original AI chatbot developed by Mandlenkosi Vundla.
+Zitholele-Sangoma_Locator-App Is developed by Mandlenkosi Vundla.
 Unauthorized use of the name, branding, or content is prohibited.
 All rights reserved © 2025.
 
