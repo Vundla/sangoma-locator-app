@@ -5,6 +5,11 @@ A secure and feature-rich online consultation platform that connects **Sangomas 
 Live Demo(https://vundla.github.io/sangoma-locator-app/)
 ---
 
+Ownership Notice
+Azanian AI Agent™ is an original AI chatbot developed by Mandlenkosi Vundla.
+Unauthorized use of the name, branding, or content is prohibited.
+All rights reserved © 2025.
+
 ## 🚀 Features
 
 ### 🧑‍⚕️ User Types
@@ -72,20 +77,49 @@ YAMI acts as a 24/7 assistant for users needing spiritual guidance before speaki
 
 
 
-sangoma-locator-app/
-├── app/
-│ ├── init.py
-│ ├── routes/
-│ │ ├── auth.py
-│ │ ├── chat.py
-│ │ ├── call.py
-│ │ ├── coins.py
-│ │ └── ai.py
-│ ├── utils/
-│ └── models.py
-├── run.py
-├── config.py
-├── requirements.txt
+Zitholele-Sangoma_locator-App/
+zitholele/
+├── backend/                  # Flask backend
+│   ├── app/                  
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── routes.py
+│   │   ├── forms.py
+│   │   ├── utils.py
+│   │   └── templates/
+│   ├── config.py
+│   ├── requirements.txt
+│   └── run.py
+├── frontend/                 # React frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
+│   └── README.md
+├── uploads/                  # User uploads
 └── README.md
+
+Frontend Project Structurefrontend/
+├── public/
+│   ├── index.html
+│   └── assets/           # CSS, JS, images
+├── src/
+│   ├── components/       # Reusable components
+│   ├── pages/           # Page components
+│   ├── services/        # API services
+│   ├── utils/          # Utility functions
+│   ├── App.js          # Main app component
+│   ├── index.js        # Entry point
+│   └── index.css       # Global styles
+├── package.json
+└── README.md
+
+Ownership Notice
+Azanian AI Agent™ is an original AI chatbot developed by Mandlenkosi Vundla.
+Unauthorized use of the name, branding, or content is prohibited.
+All rights reserved © 2025.
 
 
