@@ -739,6 +739,148 @@
             margin-right: 10px;
         }
         
+        /* Profile Section */
+        .profile-section {
+            display: none;
+            padding: 80px 0;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+        }
+        
+        .profile-info h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .profile-info p {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .profile-coins {
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .profile-tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+        
+        .profile-tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #777;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .profile-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--accent);
+        }
+        
+        .profile-content {
+            display: none;
+        }
+        
+        .profile-content.active {
+            display: block;
+        }
+        
+        .consultation-history {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .consultation-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .consultation-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .consultation-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .consultation-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Media Sharing */
+        .media-sharing {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .media-btn {
+            background: var(--light);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        
+        .media-btn i {
+            color: var(--primary);
+        }
+        
+        .media-preview {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .media-item {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+        }
+        
         @media (max-width: 768px) {
             .step {
                 width: calc(50% - 20px);
@@ -755,6 +897,11 @@
             
             nav ul {
                 gap: 10px;
+            }
+            
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
             }
         }
         
@@ -789,13 +936,13 @@
                         <li><a href="#" class="nav-link" data-section="sangomas">Find Sangoma</a></li>
                         <li><a href="#" class="nav-link" data-section="coins">Coins</a></li>
                         <li><a href="#" class="nav-link" data-section="ai">AI Assistant</a></li>
-                        <li><a href="#" class="nav-link" data-section="about">About</a></li>
+                        <li><a href="#" class="nav-link" data-section="profile">Profile</a></li>
                     </ul>
                 </nav>
                 <div class="user-actions">
                     <div class="coin-balance">
                         <i class="fas fa-coins"></i>
-                        <span id="coin-balance">1,250 Coins</span>
+                        <span id="coin-balance">0 Coins</span>
                     </div>
                     <button class="btn btn-outline" id="login-btn">
                         <i class="fas fa-user"></i> Login
@@ -863,8 +1010,8 @@
                         <i class="fas fa-image"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>Image Sharing</h3>
-                        <p>Share images securely with Sangomas for better understanding of your situation.</p>
+                        <h3>Media Sharing</h3>
+                        <p>Share images and voice recordings with Sangomas for better understanding of your situation.</p>
                     </div>
                 </div>
             </div>
@@ -872,7 +1019,7 @@
     </section>
 
     <!-- Top Sangomas Section -->
-    <section id="sangomas" class="sangoma-section section">
+    <section id="sangomas" class="sangoma-section section hidden">
         <div class="container">
             <h2 class="section-title">Top Rated Sangomas</h2>
             <p class="section-subtitle">Our platform features only the most trusted and highly rated traditional healers, verified through our strict approval process.</p>
@@ -993,7 +1140,7 @@
     </section>
 
     <!-- Coins Section -->
-    <section id="coins" class="coins-section section">
+    <section id="coins" class="coins-section section hidden">
         <div class="container">
             <h2 class="section-title">Buy Consultation Coins</h2>
             <p class="section-subtitle">Purchase coins to consult with our Sangomas. All transactions are secure and encrypted.</p>
@@ -1075,7 +1222,7 @@
     </section>
 
     <!-- AI Assistant -->
-    <section id="ai" class="ai-assistant section">
+    <section id="ai" class="ai-assistant section hidden">
         <div class="container">
             <div class="ai-content">
                 <div class="ai-icon">
@@ -1106,8 +1253,71 @@
         </div>
     </section>
 
+    <!-- Profile Section -->
+    <section id="profile" class="profile-section section hidden">
+        <div class="container">
+            <div class="profile-header">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="User Avatar" class="profile-avatar">
+                <div class="profile-info">
+                    <h2 id="profile-name">User Name</h2>
+                    <p id="profile-email">user@example.com</p>
+                    <p id="profile-type">Patient</p>
+                    <div class="profile-coins">
+                        <i class="fas fa-coins"></i>
+                        <span id="profile-coin-balance">0</span> Coins
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-tabs">
+                <div class="profile-tab active" data-tab="consultations">Consultations</div>
+                <div class="profile-tab" data-tab="wallet">Wallet</div>
+                <div class="profile-tab" data-tab="settings">Settings</div>
+            </div>
+            
+            <div id="consultations-content" class="profile-content active">
+                <h3>Recent Consultations</h3>
+                <div class="consultation-history" id="consultation-history">
+                    <!-- Will be populated with JavaScript -->
+                </div>
+            </div>
+            
+            <div id="wallet-content" class="profile-content">
+                <h3>Your Coin Wallet</h3>
+                <div class="coin-balance-display" style="background: var(--light); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                    <h4 style="margin-bottom: 10px;">Current Balance</h4>
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--accent);">
+                        <i class="fas fa-coins"></i> <span id="wallet-balance">0</span> Coins
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="buy-more-coins-btn">
+                    <i class="fas fa-plus"></i> Buy More Coins
+                </button>
+            </div>
+            
+            <div id="settings-content" class="profile-content">
+                <h3>Account Settings</h3>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="settings-name">Full Name</label>
+                        <input type="text" id="settings-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="settings-email">Email</label>
+                        <input type="email" id="settings-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="settings-password">Change Password</label>
+                        <input type="password" id="settings-password" placeholder="Leave blank to keep current">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer id="about" class="section">
+    <footer class="section">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -1118,11 +1328,11 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Find a Sangoma</a></li>
-                        <li><a href="#">Buy Coins</a></li>
-                        <li><a href="#">AI Assistant</a></li>
-                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#" class="footer-nav-link" data-section="home">Home</a></li>
+                        <li><a href="#" class="footer-nav-link" data-section="sangomas">Find a Sangoma</a></li>
+                        <li><a href="#" class="footer-nav-link" data-section="coins">Buy Coins</a></li>
+                        <li><a href="#" class="footer-nav-link" data-section="ai">AI Assistant</a></li>
+                        <li><a href="#" class="footer-nav-link" data-section="profile">Profile</a></li>
                     </ul>
                 </div>
                 
@@ -1290,7 +1500,18 @@
         </div>
         <div class="chat-input-area">
             <input type="text" id="chat-input" placeholder="Type your message...">
-            <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+            <div class="media-sharing">
+                <button class="media-btn" id="send-voice">
+                    <i class="fas fa-microphone"></i> Voice
+                </button>
+                <button class="media-btn" id="send-image">
+                    <i class="fas fa-image"></i> Image
+                </button>
+                <button id="send-message" class="btn btn-primary" style="padding: 8px 15px;">
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+            </div>
+            <div class="media-preview" id="media-preview"></div>
         </div>
     </div>
 
@@ -1306,6 +1527,7 @@
         const registerForm = document.getElementById('register-form');
         const showRegisterLink = document.getElementById('show-register');
         const navLinks = document.querySelectorAll('.nav-link');
+        const footerNavLinks = document.querySelectorAll('.footer-nav-link');
         const sections = document.querySelectorAll('.section');
         const findSangomaBtn = document.getElementById('find-sangoma-btn');
         const registerSangomaBtn = document.getElementById('register-sangoma-btn');
@@ -1329,27 +1551,44 @@
         const confirmPayment = document.getElementById('confirm-payment');
         const aiChatInput = document.getElementById('ai-chat-input');
         const aiSendBtn = document.getElementById('ai-send-btn');
+        const profileName = document.getElementById('profile-name');
+        const profileEmail = document.getElementById('profile-email');
+        const profileType = document.getElementById('profile-type');
+        const profileCoinBalance = document.getElementById('profile-coin-balance');
+        const walletBalance = document.getElementById('wallet-balance');
+        const consultationHistory = document.getElementById('consultation-history');
+        const buyMoreCoinsBtn = document.getElementById('buy-more-coins-btn');
+        const profileTabs = document.querySelectorAll('.profile-tab');
+        const profileContents = document.querySelectorAll('.profile-content');
+        const settingsForm = document.getElementById('profile-form');
+        const settingsName = document.getElementById('settings-name');
+        const settingsEmail = document.getElementById('settings-email');
+        const settingsPassword = document.getElementById('settings-password');
+        const sendVoiceBtn = document.getElementById('send-voice');
+        const sendImageBtn = document.getElementById('send-image');
+        const mediaPreview = document.getElementById('media-preview');
 
         // App State
-        let currentUser = null;
-        let currentCoins = 1250;
+        let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+        let currentCoins = currentUser ? currentUser.coins : 0;
         let currentCall = null;
         let callInterval = null;
         let callDuration = 0;
         let callCost = 0;
         let callType = null;
         let currentSangoma = null;
+        let consultationHistoryData = JSON.parse(localStorage.getItem('consultationHistory')) || [];
 
         // Initialize
-        updateCoinBalance();
+        updateUI();
 
         // Event Listeners
         loginBtn.addEventListener('click', () => {
             if (currentUser) {
                 // Logout
                 currentUser = null;
-                loginBtn.innerHTML = '<i class="fas fa-user"></i> Login';
-                coinBalanceEl.textContent = '0 Coins';
+                localStorage.removeItem('currentUser');
+                updateUI();
                 alert('You have been logged out.');
             } else {
                 loginModal.style.display = 'flex';
@@ -1387,6 +1626,14 @@
             });
         });
 
+        footerNavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('data-section');
+                showSection(sectionId);
+            });
+        });
+
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = document.getElementById('login-email').value;
@@ -1397,13 +1644,12 @@
                 name: email.split('@')[0],
                 email,
                 type: 'patient',
-                coins: currentCoins
+                coins: 1250
             };
             
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
-            updateCoinBalance();
+            updateUI();
             loginModal.style.display = 'none';
-            loginBtn.innerHTML = '<i class="fas fa-user"></i> Logout';
             alert(`Welcome back, ${currentUser.name}!`);
         });
 
@@ -1470,6 +1716,15 @@
                     // Text chat
                     chatSangomaEl.textContent = sangomaName;
                     consultationChat.style.display = 'block';
+                    
+                    // Add to consultation history
+                    addConsultationHistory({
+                        type: 'text',
+                        sangoma: sangomaName,
+                        date: new Date().toLocaleString(),
+                        cost: 25,
+                        duration: 'N/A'
+                    });
                 } else if (consultationType === "2") {
                     // Voice call
                     startCall(sangomaName, 'voice');
@@ -1509,7 +1764,9 @@
             e.preventDefault();
             const amount = parseInt(purchaseAmount.textContent.replace(/,/g, ''));
             currentCoins += amount;
-            updateCoinBalance();
+            currentUser.coins = currentCoins;
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            updateUI();
             paymentModal.style.display = 'none';
             alert(`Thank you! You now have ${currentCoins.toLocaleString()} coins.`);
         });
@@ -1520,16 +1777,157 @@
             if (e.key === 'Enter') sendAIMessage();
         });
 
+        buyMoreCoinsBtn.addEventListener('click', () => {
+            showSection('coins');
+        });
+
+        profileTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                profileTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all content
+                profileContents.forEach(content => content.classList.remove('active'));
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+
+        settingsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            currentUser.name = settingsName.value;
+            currentUser.email = settingsEmail.value;
+            if (settingsPassword.value) {
+                currentUser.password = settingsPassword.value;
+            }
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            updateUI();
+            alert('Profile updated successfully!');
+        });
+
+        sendVoiceBtn.addEventListener('click', () => {
+            // Simulate voice recording
+            alert('Voice recording feature would be implemented here. This is free of charge.');
+            
+            // Add voice message to chat
+            const voiceMessage = document.createElement('div');
+            voiceMessage.className = 'message sent';
+            voiceMessage.innerHTML = '<i class="fas fa-microphone"></i> Voice message (0:15)';
+            chatMessages.appendChild(voiceMessage);
+            
+            // Simulate response
+            setTimeout(() => {
+                const response = document.createElement('div');
+                response.className = 'message received';
+                response.innerHTML = '<i class="fas fa-microphone"></i> Voice response (0:10)';
+                chatMessages.appendChild(response);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 2000);
+            
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+
+        sendImageBtn.addEventListener('click', () => {
+            // Simulate image upload
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        // Add image to chat
+                        const imgMessage = document.createElement('div');
+                        imgMessage.className = 'message sent';
+                        imgMessage.innerHTML = `<img src="${event.target.result}" style="max-width: 100%; border-radius: 8px;" alt="Shared image">`;
+                        chatMessages.appendChild(imgMessage);
+                        
+                        // Add to media preview
+                        const imgPreview = document.createElement('img');
+                        imgPreview.src = event.target.result;
+                        imgPreview.className = 'media-item';
+                        mediaPreview.appendChild(imgPreview);
+                        
+                        // Simulate response
+                        setTimeout(() => {
+                            const response = document.createElement('div');
+                            response.className = 'message received';
+                            response.textContent = 'I see what you mean. The ancestors are showing me...';
+                            chatMessages.appendChild(response);
+                            chatMessages.scrollTop = chatMessages.scrollHeight;
+                        }, 2000);
+                        
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        });
+
         // Functions
+        function updateUI() {
+            if (currentUser) {
+                // Update header
+                loginBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i> Logout';
+                coinBalanceEl.textContent = `${currentUser.coins.toLocaleString()} Coins`;
+                
+                // Update profile
+                profileName.textContent = currentUser.name;
+                profileEmail.textContent = currentUser.email;
+                profileType.textContent = currentUser.type === 'sangoma' ? 'Sangoma' : 'Patient';
+                profileCoinBalance.textContent = currentUser.coins.toLocaleString();
+                walletBalance.textContent = currentUser.coins.toLocaleString();
+                settingsName.value = currentUser.name;
+                settingsEmail.value = currentUser.email;
+                
+                // Show all sections for logged in users
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('hidden');
+                });
+                
+                // Update consultation history
+                renderConsultationHistory();
+            } else {
+                // Update header
+                loginBtn.innerHTML = '<i class="fas fa-user"></i> Login';
+                coinBalanceEl.textContent = '0 Coins';
+                
+                // Hide sections that require login
+                document.querySelectorAll('.section').forEach(section => {
+                    if (section.id !== 'home' && section.className.includes('section') && !section.className.includes('how-it-works') && !section.className.includes('footer')) {
+                        section.classList.add('hidden');
+                    }
+                });
+                
+                // Show home section
+                document.getElementById('home').classList.remove('hidden');
+            }
+        }
+
         function updateCoinBalance() {
             if (currentUser) {
+                currentUser.coins = currentCoins;
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
                 coinBalanceEl.textContent = `${currentCoins.toLocaleString()} Coins`;
+                profileCoinBalance.textContent = currentCoins.toLocaleString();
+                walletBalance.textContent = currentCoins.toLocaleString();
             } else {
                 coinBalanceEl.textContent = '0 Coins';
             }
         }
 
         function showSection(sectionId) {
+            if (!currentUser && sectionId !== 'home') {
+                alert('Please login to access this section');
+                loginModal.style.display = 'flex';
+                return;
+            }
+            
             // Hide all sections
             sections.forEach(section => {
                 section.classList.add('hidden');
@@ -1553,6 +1951,7 @@
             callContainer.style.display = 'block';
             callDuration = 0;
             callCost = 0;
+            document.getElementById('call-title').textContent = `${type === 'voice' ? 'Voice' : 'Video'} Call with ${sangomaName}`;
             
             // Start timer
             callInterval = setInterval(() => {
@@ -1563,9 +1962,9 @@
                 
                 // Calculate cost - doubles every minute
                 if (callType === 'voice') {
-                    callCost += 150 * Math.pow(2, callDuration - 1);
+                    callCost += 150 * Math.pow(2, Math.floor((callDuration-1)/60));
                 } else if (callType === 'video') {
-                    callCost += 300 * Math.pow(2, callDuration - 1);
+                    callCost += 300 * Math.pow(2, Math.floor((callDuration-1)/60));
                 }
                 
                 document.getElementById('current-cost').textContent = callCost.toLocaleString();
@@ -1583,6 +1982,16 @@
             
             currentCoins -= callCost;
             updateCoinBalance();
+            
+            // Add to consultation history
+            addConsultationHistory({
+                type: callType,
+                sangoma: currentSangoma.name,
+                date: new Date().toLocaleString(),
+                cost: callCost,
+                duration: callDuration + ' seconds'
+            });
+            
             alert(`Call ended. Duration: ${callDuration} seconds. Cost: ${callCost} coins.`);
         }
 
@@ -1682,6 +2091,36 @@
             }, 1000);
         }
 
+        function addConsultationHistory(consultation) {
+            consultationHistoryData.push(consultation);
+            localStorage.setItem('consultationHistory', JSON.stringify(consultationHistoryData));
+            renderConsultationHistory();
+        }
+
+        function renderConsultationHistory() {
+            consultationHistory.innerHTML = '';
+            
+            consultationHistoryData.forEach(consultation => {
+                const card = document.createElement('div');
+                card.className = 'consultation-card';
+                
+                const typeIcon = consultation.type === 'text' ? 'fa-comment' : 
+                                consultation.type === 'voice' ? 'fa-phone-alt' : 'fa-video';
+                
+                card.innerHTML = `
+                    <h4><i class="fas ${typeIcon}"></i> ${consultation.type.charAt(0).toUpperCase() + consultation.type.slice(1)} Consultation</h4>
+                    <div class="consultation-meta">
+                        <span>With ${consultation.sangoma}</span>
+                        <span>${consultation.date}</span>
+                    </div>
+                    <p><strong>Cost:</strong> ${consultation.cost} coins</p>
+                    <p><strong>Duration:</strong> ${consultation.duration}</p>
+                `;
+                
+                consultationHistory.appendChild(card);
+            });
+        }
+
         // Close modals when clicking outside
         window.addEventListener('click', (e) => {
             if (e.target === loginModal) {
@@ -1694,6 +2133,9 @@
                 paymentModal.style.display = 'none';
             }
         });
+
+        // Initialize UI
+        updateUI();
     </script>
 </body>
 </html>
