@@ -6,7 +6,9 @@ Live Demo(https://vundla.github.io/sangoma-locator-app/)
 ---
 
 Ownership Notice
-Zitholele-Sangoma_Locator-APP Is developed by Mandlenkosi Vundla.
+Zitholele-Sangoma_Locator-APP Is developed by Mandlenkosi Vundla. And has a business
+partner named Mlungisi Mvubu,the app is still under development and we are still intergrating new updated features we will slowly
+upgrade our code and project structure so
 Unauthorized use of the name, branding, or content is prohibited.
 All rights reserved © 2025.
 
